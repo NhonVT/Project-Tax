@@ -13,14 +13,28 @@ function centerNav() {
 function fsEvent() {
     //Navbut event
     $(document).on('click', '.nav-but', function () {
-        if ($(this).hasClass('show')) {
-            $('body').removeClass('no-scrollX');
-            $('.nav-but, .main').removeClass('show');
-        } else {
-            $('body').addClass('no-scrollX');
-            $('.nav-but, .main').addClass('show');
+        // if ($(this).hasClass('show')) {
+        //     $('body').removeClass('no-scrollX');
+        //     $('.nav-but, .main').removeClass('show');
+        // } else {
+        //     $('body').addClass('no-scrollX');
+        //     $('.nav-but, .main').addClass('show');
+        // }
+        if($('.navigation').hasClass('active')){
+            $('.navigation').removeClass('active');
+        }else{
+            $('.navigation').addClass('active');
         }
     });
+ 
+    if(isMobile){
+        $(document).on('click', '.has-sub', function(){
+            var that = $(this);
+            if(that.children().hasClass('sub-menu')){
+                $('.nav ul.sub-menu').slideDown().addClass('active');
+            }
+        });
+    }
 
     //Close nav by scoll
     $(document).on("mouseenter", ".side", function () {

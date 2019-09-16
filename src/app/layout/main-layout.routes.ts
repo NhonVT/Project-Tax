@@ -4,6 +4,6 @@ import { Routes } from '@angular/router';
 export const MAIN_ROUTES: Routes = [
   {
     path: '',
-    loadChildren: '../page/dashboard/dashboard.module#DashboardModule'
+    loadChildren: '../page/dashboard/dashboard.module#DashboardModule',
   },
 ];

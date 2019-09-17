@@ -2081,6 +2081,8 @@ button.toast-close-button {
 		height: 100%;
 		padding: 80px 10px;
 		background-color: #fff;
+		overflow: hidden;
+		overflow-y: scroll;
 	}
 	.nav ul li{
 		display: block;
@@ -2100,20 +2102,21 @@ button.toast-close-button {
 	}
 	
 	.nav ul li.has-sub .sub-menu{
-		position: relative;
-		visibility: hidden;
-		opacity: 0;
-		left: 0;
-		margin: 0;
-		background-color: transparent;
 		display: none;
 	}
 	.nav ul li.has-sub .sub-menu.active{
+		position: relative;
 		visibility: visible;
 		opacity: 1;
+		left: 0;
+		margin: 0;
+		background-color: transparent;
 		display: block;
 	}
-
+	.nav ul.sub-menu li{
+		text-align: left;
+		padding-left: 15px;
+	}
 	.nav ul.sub-menu a:hover{
 		background-color: unset;
 		-webkit-transition-delay: unset;

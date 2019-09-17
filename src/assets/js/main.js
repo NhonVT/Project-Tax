@@ -28,10 +28,12 @@ function fsEvent() {
     });
  
     if(isMobile){
-        $(document).on('click', '.has-sub', function(){
+        $(document).on('click', '.has-sub a', function(){
             var that = $(this);
-            if(that.children().hasClass('sub-menu')){
-                $('.nav ul.sub-menu').slideDown().addClass('active');
+            if(that.next().hasClass('active')){
+                that.next().removeClass('active');
+            }else{
+                that.next().addClass('active');
             }
         });
     }

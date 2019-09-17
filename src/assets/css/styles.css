@@ -2098,14 +2098,28 @@ button.toast-close-button {
 		margin: 0 2px 0 0;
 		cursor: pointer;
 	}
-	.nav ul.sub-menu.active{
+	
+	.nav ul li.has-sub .sub-menu{
 		position: relative;
-		visibility: visible;
-		opacity: 1;
+		visibility: hidden;
+		opacity: 0;
 		left: 0;
 		margin: 0;
+		background-color: transparent;
+		display: none;
+	}
+	.nav ul li.has-sub .sub-menu.active{
+		visibility: visible;
+		opacity: 1;
+		display: block;
 	}
 
+	.nav ul.sub-menu a:hover{
+		background-color: unset;
+		-webkit-transition-delay: unset;
+		transition-delay: unset;
+		color: #000;
+	}
 }
 
 @media screen and (max-width:700px) {
@@ -2132,6 +2146,9 @@ button.toast-close-button {
 }
 
 @media screen and (max-width:350px) {
+	.nav ul.sub-menu.active {
+		left: -15px;
+	}
 }
 
 @media screen and  (max-width:840px) and (orientation :landscape){

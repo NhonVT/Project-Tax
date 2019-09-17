@@ -1,7 +1,7 @@
-<div class="overlay-popup active">
+<div class="overlay-popup" [ngClass]="isShowPopUp?'active':''">
 
     <div class="wrap-popup-content">
-        <div class="overlay-inr signin-overlay">
+        <div class="overlay-inr signin-overlay" [ngClass]="!isSignIn?'hide':''">
 
             <div class="title">
                 <h2>Sign in</h2>
@@ -22,7 +22,27 @@
             </div>
 
             <div class="box-but">
-                <div class="btn btnLogin" id="btnLogin"><span>Sign In</span>
+                <div class="btn btnLogin" id="btnLogin" (click)="showTaxCode()"><span>Sign In</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay-inr taxcode-overlay" [ngClass]="!isTaxCode?'hide':''">
+
+            <div class="title">
+                <h2>Tax Code</h2>
+            </div>
+
+            <div class="box">
+                <span class="caption">Code</span>
+                <div class="form-group">
+                    <input type="text" id="txtTax" placeholder="Input Tax Code"/>
+                </div>
+            </div>
+
+            <div class="box-but">
+                <div class="btn btnSignUp" id="btnSignUp">
+                    <span>Enter</span>
                 </div>
             </div>
 

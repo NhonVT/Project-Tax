@@ -3,36 +3,38 @@
     <!--Header-->
     <div class="header">
         <div class="header-inr">
-            <div class="nav-but">
+            <div class="nav-but" (click)="OpenMemu();">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <div class="logo">
-                <a><img draggable="false" src="assets/images/hdr-logo-ompalo.png" alt="ompalo"></a>
+                <a href="javascript:void(0);"><img draggable="false" src="assets/images/hdr-logo-ompalo.png" alt="ompalo"></a>
             </div>
-            <div class="navigation">
+            <div class="navigation" [ngClass]="(isMenu)?'active':''"> 
                 <div class="nav">
                     <ul>
                         <li><a href="javascript:void(0);">Home</a></li>
-                        <li class="has-sub"><a href="javascript:void(0);">Menu</a>
-                        <ul class="sub-menu">
-                            <li><a href="javascript:void(0);">Lorem</a></li>
-                            <li><a href="javascript:void(0);">Lorem</a></li>
-                            <li><a href="javascript:void(0);">Lorem</a></li>
-                            <li><a href="javascript:void(0);">Lorem</a></li>
-                            <li><a href="javascript:void(0);">Lorem</a></li>
+                        <li class="has-sub">
+                            <a href="javascript:void(0);" (click)="ShowSubMenu(1);">Menu</a>
+                        <ul class="sub-menu" [ngClass]="isSubmenu==1?'active':''">
+                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
+                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
                         </ul>
                         </li>
                         <li><a href="javascript:void(0);">Getting Around</a></li>
                         <li><a href="javascript:void(0);">About Us</a></li>
-                        <li class="has-sub"><a href="javascript:void(0);">Contact Us</a>
-                            <ul class="sub-menu">
-                                <li><a href="javascript:void(0);">Lorem 2</a></li>
-                                <li><a href="javascript:void(0);">Lorem 2</a></li>
-                                <li><a href="javascript:void(0);">Lorem 2</a></li>
-                                <li><a href="javascript:void(0);">Lorem 2</a></li>
-                                <li><a href="javascript:void(0);">Lorem 2</a></li>
+                        <li class="has-sub">
+                            <a href="javascript:void(0);" (click)="ShowSubMenu(2);">Contact Us</a>
+                            <ul class="sub-menu" [ngClass]="isSubmenu==2?'active':''">
+                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
+                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -47,11 +49,8 @@
     <div class="cnt-inr">
 
         <!--Side-->
-        <div class="main">
-            <div class="main-inr">
-                <router-outlet></router-outlet>
-            </div>
-
+        <div class="main" [ngClass]="(isMenu)?'active':''">
+            <router-outlet></router-outlet>
         </div>
         <!--/Main-->
 

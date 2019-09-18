@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Inject, HostListener } from '@angular/core';
 import { LazyService } from '../services/lazy-service';
+import { DOCUMENT } from '@angular/platform-browser';
 
 
 @Component({
@@ -10,14 +11,30 @@ import { LazyService } from '../services/lazy-service';
 
 export class MainLayoutComponent implements OnInit {
 
+    isMenu = false;
+    isSubmenu = 0;
+    constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
+    }
 
-    constructor(private elementRef: ElementRef) {
+    OpenMemu() {
+        if (window.innerWidth < 1100) {
+            this.isMenu = !this.isMenu;
+            if (this.isMenu) {
+                this.document.body.classList.add('no-scroll');
+            } else {
+                this.document.body.classList.remove('no-scroll');
+            }
+        }
+    }
+
+    ShowSubMenu(index: number) {
+        if (window.innerWidth < 1100 ) {
+            this.isSubmenu = index;
+        }
     }
 
     ngOnInit() {
-        setTimeout(() => {
-            LazyService.ImgLazyLoad(this.elementRef);
-        }, 500);
+
     }
 
 }

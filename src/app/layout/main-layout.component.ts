@@ -13,6 +13,7 @@ export class MainLayoutComponent implements OnInit {
 
     isMenu = false;
     isSubmenu = 0;
+    close = false;
     constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
     }
 
@@ -27,10 +28,11 @@ export class MainLayoutComponent implements OnInit {
         }
     }
 
-    ShowSubMenu(index: number) {
-        if (window.innerWidth < 1100 ) {
+    ShowSubMenu(index: number, event) {
+        if (window.innerWidth < 1100) {
             this.isSubmenu = index;
         }
+
     }
 
     ngOnInit() {

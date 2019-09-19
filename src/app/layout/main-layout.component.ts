@@ -28,9 +28,13 @@ export class MainLayoutComponent implements OnInit {
         }
     }
 
-    ShowSubMenu(index: number, event) {
+    ShowSubMenu(index: number) {
         if (window.innerWidth < 1100) {
-            this.isSubmenu = index;
+            if (this.isSubmenu === index) {
+                this.isSubmenu = 0;
+            } else {
+                this.isSubmenu = index;
+            }
         }
 
     }

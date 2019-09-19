@@ -13,7 +13,9 @@ export class MainLayoutComponent implements OnInit {
 
     isMenu = false;
     isSubmenu = 0;
-    close = false;
+    isIconRotate = 0;
+    closeNav = false;
+    // tslint:disable-next-line: deprecation
     constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
     }
 
@@ -32,8 +34,10 @@ export class MainLayoutComponent implements OnInit {
         if (window.innerWidth < 1100) {
             if (this.isSubmenu === index) {
                 this.isSubmenu = 0;
+                this.isIconRotate = 0;
             } else {
                 this.isSubmenu = index;
+                this.isIconRotate = index;
             }
         }
 

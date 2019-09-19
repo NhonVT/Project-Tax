@@ -11,13 +11,13 @@
             <div class="logo">
                 <a href="javascript:void(0);"><img draggable="false" src="assets/images/hdr-logo-ompalo.png" alt="ompalo"></a>
             </div>
-            <div class="navigation" [ngClass]="(isMenu)?'active':''"> 
+            <div class="navigation" [ngClass]="isMenu?'active':''"> 
                 <div class="nav">
                     <ul>
                         <li><a href="javascript:void(0);">Home</a></li>
                         <li class="has-sub">
-                            <a href="javascript:void(0);" (click)="ShowSubMenu(1);">Menu</a>
-                        <ul class="sub-menu" [ngClass]="isSubmenu==1?'active':''">
+                            <a class="has-icon" [ngClass]="isIconRotate == 1?'active':''" href="javascript:void(0);" (click)="ShowSubMenu(1);">Menu</a>
+                        <ul class="sub-menu" [ngClass]="isSubmenu== 1?'active':''">
                             <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
                             <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
                             <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
@@ -28,7 +28,7 @@
                         <li><a href="javascript:void(0);">Getting Around</a></li>
                         <li><a href="javascript:void(0);">About Us</a></li>
                         <li class="has-sub">
-                            <a href="javascript:void(0);" (click)="ShowSubMenu(2);">Contact Us</a>
+                            <a class="has-icon" [ngClass]="isIconRotate == 2?'active':''" href="javascript:void(0);" (click)="ShowSubMenu(2);">Contact Us</a>
                             <ul class="sub-menu" [ngClass]="isSubmenu==2?'active':''">
                                 <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
                                 <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
@@ -49,7 +49,7 @@
     <div class="cnt-inr">
 
         <!--Side-->
-        <div class="main" [ngClass]="(isMenu)?'active':''">
+        <div class="main">
             <router-outlet></router-outlet>
         </div>
         <!--/Main-->

@@ -602,10 +602,32 @@ button, input, textarea{
     height: auto;
 }
 .nav ul li a{
+	position: relative;
     font-size: 16px;
     font-family: 'SFProDisplay-Medium';
     padding: 15px;
     font-weight: normal;
+}
+.nav .has-sub .has-icon::after{
+	content: '';
+    position: absolute;
+    right: 0;
+    bottom: 18px;
+    width: 10px;
+    height: 10px;
+    background: url(../images/arrow-down.png) no-repeat;
+    background-size: contain;
+	background-position: center;
+	-webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.nav .has-sub .has-icon.active:after{
+	-webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 .nav ul.sub-menu{
 	position: absolute;
@@ -2010,6 +2032,10 @@ button.toast-close-button {
 		margin-left:10px;
 		width:79px;
 		height:26px;
+	}
+	.nav .has-sub .has-icon::after{
+		right: 10px;
+		bottom: 15px;
 	}
 }
 

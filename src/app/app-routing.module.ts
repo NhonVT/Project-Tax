@@ -5,7 +5,6 @@ import { MAIN_ROUTES } from './layout/main-layout.routes';
 
 const routes: Routes = [
   { path: '', component: MainLayoutComponent, children: MAIN_ROUTES },
-  // { path: '', redirectTo: '/dashboard' },
 ];
 
 @NgModule({

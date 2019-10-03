@@ -6,4 +6,8 @@ export const MAIN_ROUTES: Routes = [
     path: '',
     loadChildren: './page/dashboard/dashboard.module#DashboardModule'
   },
+  {
+    path: 'getting',
+    loadChildren: './page/getting/getting.module#GettingModule'
+  },
 ];

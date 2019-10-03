@@ -26,6 +26,13 @@ export class CommonService {
     static ShowPopupAddMyListVideoKey = 'ShowPopupAddMyListVideoKey';
     static ShowPopupShareKey = 'ShowPopupShareKey';
     static ChangeMyListDetailSubcribeKey = 'ChangeMyListDetailSubcribeKey';
+
+
+
+    //Show menu Active Key
+    static ShowDashboardMenuKey = 'ShowDashboardMenu';
+    static ShowGettingAroundMenuKey = 'ShowGetAroundMenuKey';
+
     static format(str: string, obj: string[]) {
         return str.replace(/\{\s*([^}\s]+)\s*\}/g, (p1) => {
             return obj[p1];

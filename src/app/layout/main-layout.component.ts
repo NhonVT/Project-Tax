@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef, Inject, HostListener } from '@angular/core';
-import { LazyService } from '../services/lazy-service';
 import { DOCUMENT } from '@angular/platform-browser';
+import { Subscription } from 'rxjs';
+import { MessageSubcribeService } from '../services/message-subcribe-service';
+import { CommonService } from '../services/common-service';
 
 
 @Component({
@@ -15,8 +17,22 @@ export class MainLayoutComponent implements OnInit {
     isSubmenu = 0;
     isIconRotate = 0;
     closeNav = false;
+    activeMenuId = 0;
+    subscription: Subscription;
     // tslint:disable-next-line: deprecation
-    constructor(private elementRef: ElementRef, @Inject(DOCUMENT) private document: Document) {
+    constructor(
+        private elementRef: ElementRef,
+        @Inject(DOCUMENT) private document: Document,
+        private messageSubService: MessageSubcribeService) {
+        this.subscription = this.messageSubService.getMessage().subscribe(dataMessage => {
+            if (dataMessage !== null) {
+                if (dataMessage.Key === CommonService.ShowDashboardMenuKey) {
+                    this.activeMenuId = 1;
+                } else if (dataMessage.Key === CommonService.ShowGettingAroundMenuKey) {
+                    this.activeMenuId = 3;
+                }
+            }
+        });
     }
 
     OpenMemu() {

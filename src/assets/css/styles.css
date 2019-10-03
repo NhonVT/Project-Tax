@@ -2125,6 +2125,9 @@ button.toast-close-button {
 		overflow: hidden;
 		overflow-y: scroll;
 	}
+	.navigation .nav .menu-active.active{
+		color: #f00;
+	}
 	.nav ul li{
 		display: block;
 		margin-bottom: 15px;

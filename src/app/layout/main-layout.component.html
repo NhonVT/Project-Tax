@@ -1,4 +1,4 @@
-<div class="fs-page">
+<div class="fs-page" >
 
     <!--Header-->
     <header class="fs-header">
@@ -6,11 +6,11 @@
         <div class="fs-logo">
             <a href="javascript:void(0)"><img class="cmPic" src="../../assets/images/hdr-logo-ompalo.png" alt="Techable"></a>
         </div>
-        <div class="fs-navigation">
+        <div class="fs-navigation" [ngClass]="isShow?'active':''">
             <div class="fs-nav">
                 <ul>
-                    <li><a href="javascript:void(0);">Trang chủ</a></li>
-                    <li><a href="javascript:void(0);">Chuyên mục</a></li>
+                    <li><a [ngClass]="activeMenuId==1?'active':''" [routerLink]="['/']">Trang chủ</a></li>
+                    <li><a [ngClass]="activeMenuId==2?'active':''" [routerLink]="['/browse']">Chuyên mục</a></li>
                     <li><a href="javascript:void(0);">Cài đặt</a></li>
                     <li><a href="javascript:void(0);">Tìm hiểu thêm</a></li>
                     <li><a href="javascript:void(0);">Trợ giúp</a></li>
@@ -18,7 +18,7 @@
                 </ul>
             </div>
         </div>
-        <div class="fs-nav-but">
+        <div class="fs-nav-but" [ngClass]="isChangeClose?'active':''" (click)="showMenu()">
             <span class="fs-nav-line"></span>
             <span class="fs-nav-line"></span>
             <span class="fs-nav-line"></span>
@@ -29,9 +29,7 @@
 
     <!--Content-->
     <div class="fs-container">
-
         <router-outlet></router-outlet>
-
     </div>
     <!--/Content-->
 

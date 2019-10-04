@@ -12,11 +12,13 @@ import { CommonService } from '../services/common-service';
 
 
 export class MainLayoutComponent implements OnInit {
-
-    isMenu = false;
-    isSubmenu = 0;
-    isIconRotate = 0;
-    closeNav = false;
+    docEl: any;
+    pageWrap: any;
+    scrollTop: any;
+    isOverlay = false;
+    isShow = false;
+    isChangeClose = false;
+    isClock = false;
     activeMenuId = 0;
     subscription: Subscription;
     // tslint:disable-next-line: deprecation
@@ -28,36 +30,58 @@ export class MainLayoutComponent implements OnInit {
             if (dataMessage !== null) {
                 if (dataMessage.Key === CommonService.ShowDashboardMenuKey) {
                     this.activeMenuId = 1;
-                } else if (dataMessage.Key === CommonService.ShowGettingAroundMenuKey) {
-                    this.activeMenuId = 3;
+                } else if (dataMessage.Key === CommonService.ShowBrowseMenuKey) {
+                    this.activeMenuId = 2;
                 }
             }
         });
     }
 
-    OpenMemu() {
-        if (window.innerWidth < 1100) {
-            this.isMenu = !this.isMenu;
-            if (this.isMenu) {
-                this.document.body.classList.add('no-scroll');
-            } else {
-                this.document.body.classList.remove('no-scroll');
-            }
+    showMenu() {
+        if (this.isShow === false) {
+            this.isShow = !this.isShow;
+            this.isChangeClose = !this.isChangeClose;
+            this.document.body.classList.add('fs-no-scroll');
+            // this.lockBody();
+        } else {
+            // this.unlockBody();
+            this.isShow = false;
+            this.isChangeClose = false;
+            this.document.body.classList.remove('fs-no-scroll');
         }
     }
 
-    ShowSubMenu(index: number) {
-        if (window.innerWidth < 1100) {
-            if (this.isSubmenu === index) {
-                this.isSubmenu = 0;
-                this.isIconRotate = 0;
-            } else {
-                this.isSubmenu = index;
-                this.isIconRotate = index;
-            }
-        }
-
-    }
+    //  setStyle() {
+    //      const styles = {
+    //          top: -(this.scrollTop),
+    //      };
+    //      return styles;
+    //  }
+    //  setStyle2() {
+    //      const styles = {
+    //          top: 'auto',
+    //      };
+    //      return styles;
+    //  }
+ 
+    //  // Lock touch body
+    //  lockBody() {
+    //      if (window.pageYOffset) {
+    //          this.scrollTop = window.pageYOffset;
+    //          this.setStyle();
+    //      }
+    //      this.document.body.classList.add('fs-no-scroll');
+    //  }
+ 
+    //  // Unlock touch body
+    //  unlockBody() {
+    //      window.scrollTo(0, this.scrollTop);
+    //      this.setStyle2();
+    //      window.setTimeout(function() {
+    //          this.scrollTop = null;
+    //      }, 0);
+    //      this.document.body.classList.remove('fs-no-scroll');
+    //  }
 
     ngOnInit() {
 

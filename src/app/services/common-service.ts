@@ -31,7 +31,7 @@ export class CommonService {
 
     //Show menu Active Key
     static ShowDashboardMenuKey = 'ShowDashboardMenu';
-    static ShowGettingAroundMenuKey = 'ShowGetAroundMenuKey';
+    static ShowBrowseMenuKey = 'ShowBrowseMenuKey';
 
     static format(str: string, obj: string[]) {
         return str.replace(/\{\s*([^}\s]+)\s*\}/g, (p1) => {

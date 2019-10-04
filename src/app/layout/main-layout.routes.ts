@@ -7,7 +7,7 @@ export const MAIN_ROUTES: Routes = [
     loadChildren: './page/dashboard/dashboard.module#DashboardModule'
   },
   {
-    path: 'getting',
-    loadChildren: './page/getting/getting.module#GettingModule'
+    path: 'browse',
+    loadChildren: './page/browse/browse.module#BrowseModule'
   },
 ];

@@ -1,53 +1,36 @@
-<div class="overlay-popup" [ngClass]="isShowPopUp?'active':''">
+  <!--Popup-->
+  <div class="fs-overlay">
+    <div class="fs-close-overlay">Close overlay popup</div>
+    <div class="fs-overlay-inr">
+        <div class="fs-form">
+            <form id="fs_form_register" class="fs_form_register">
 
-    <div class="wrap-popup-content">
-        <div class="overlay-inr signin-overlay" [ngClass]="!isSignIn?'hide':''">
-
-            <div class="title">
-                <h2>Sign in</h2>
-            </div>
-
-            <div class="box">
-                <span class="caption">Email</span>
-                <div class="form-group">
-                    <input type="text" id="txtSignInUserName" placeholder="Input your email..." />
+                <div class="fs-group">
+                    <div class="fs-error-txt">
+                        <p>Vui lòng kiểm tra lại dữ liệu</p>
+                    </div>
+                    <input type="text" name="fs_txt_username" id="fs_txt_username" placeholder="Họ và tên*"
+                        value="">
                 </div>
-            </div>
 
-            <div class="box">
-                <span class="caption">Password</span>
-                <div class="form-group">
-                    <input type="password" id="txtSignInPassword" placeholder="Input your password...">
+                <div class="fs-group">
+                    <div class="fs-error-txt">
+                        <p>Vui lòng kiểm tra lại dữ liệu</p>
+                    </div>
+                    <input type="password" name="fs_txt_password" id="fs_txt_password" placeholder="Mật khẩu*"
+                        value="">
                 </div>
-            </div>
 
-            <div class="box-but">
-                <div class="btn btnLogin" id="btnLogin" (click)="showTaxCode()"><span>Sign In</span>
+                <div class="fs-group">
+                    <div class="fs-box-but">
+                        <button type="button" name="fs_btn_register" id="fs_btn_register"
+                            class="fs-btn"><span>Đăng nhập</span></button>
+                    </div>
+
                 </div>
-            </div>
+
+            </form>
         </div>
-
-        <div class="overlay-inr taxcode-overlay" [ngClass]="!isTaxCode?'hide':''">
-
-            <div class="title">
-                <h2>Tax Code</h2>
-            </div>
-
-            <div class="box">
-                <span class="caption">Code</span>
-                <div class="form-group">
-                    <input type="text" id="txtTax" placeholder="Input Tax Code"/>
-                </div>
-            </div>
-
-            <div class="box-but">
-                <div class="btn btnSignUp" id="btnSignUp">
-                    <span>Next</span>
-                </div>
-            </div>
-
-        </div>
-
     </div>
-
 </div>
+<!--/Popup-->

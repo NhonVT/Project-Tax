@@ -598,6 +598,10 @@ html, body{
 	line-height:1.2;
 }
 
+.fs-nav li a.active{
+	color: #f00;
+}
+
 /*NAV BUTTON*/
 .fs-nav-but{
 	position:absolute;

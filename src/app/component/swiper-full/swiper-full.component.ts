@@ -9,6 +9,7 @@ import { SwiperComponent } from 'ngx-useful-swiper';
 
 export class SwiperFullComponent implements OnInit {
 
+  // set up swiper
   config: SwiperOptions = {
     effect: 'fade',
     loop: true,

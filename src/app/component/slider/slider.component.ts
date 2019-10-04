@@ -9,12 +9,12 @@ import { SwiperComponent } from 'ngx-useful-swiper';
 
 export class SliderComponent implements OnInit {
 
+  // set up swiper
   config: SwiperOptions = {
     effect: 'slide',
     loop: true,
     speed: 800,
     preventClicksPropagation: false,
-    slidesPerView: 3,
     breakpoints: {
       520: {
         slidesPerView: 1

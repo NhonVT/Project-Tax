@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, OnDestroy, ElementRef } from '@angular/core';
-import { LazyService } from 'src/app/services/lazy-service';
+import { LazyService } from '../../services/lazy-service';
 import { MessageSubcribeService } from '../../services/message-subcribe-service';
 import { Subscription } from 'rxjs';
 import { MessageSubcribeData } from 'src/app/models/message-subcribe-data';

@@ -2,22 +2,25 @@ import { Component, OnInit, ViewChild, OnDestroy, ElementRef } from '@angular/co
 import { MessageSubcribeService } from '../../services/message-subcribe-service';
 import { MessageSubcribeData } from '../../models/message-subcribe-data';
 import { CommonService } from '../../services/common-service';
+import { LazyService } from '../../services/lazy-service';
 
 
 @Component({
-    selector: 'app-getting',
-    templateUrl: './getting.component.html'
+    selector: 'app-browse',
+    templateUrl: './browse.component.html'
 })
 
-export class GettingComponent implements OnInit {
+export class BrowseComponent implements OnInit {
 
 
     constructor(private elementRef: ElementRef, private messageSubService: MessageSubcribeService) {
-        this.messageSubService.sendMessage(new MessageSubcribeData(CommonService.ShowGettingAroundMenuKey, ''));
+        this.messageSubService.sendMessage(new MessageSubcribeData(CommonService.ShowBrowseMenuKey, ''));
     }
 
     ngOnInit() {
-
+        setTimeout(() => {
+            LazyService.ImgLazyLoad(this.elementRef);
+        }, 500);
     }
 
 }

@@ -1,0 +1,111 @@
+<!--Form-->
+<div class="fs-section is-exaple">
+
+    <div class="fs-title">
+        <h2>Form demo</h2>
+    </div>
+
+    <div class="fs-form">
+        <form id="fs_form_register" class="fs_form_register">
+
+            <div class="fs-group" [ngClass]="isShowError?'fs-show-error':''">
+                <div class="fs-error-txt">
+                    <p>Vui lòng kiểm tra lại dữ liệu</p>
+                </div>
+                <input type="text" name="fs_txt_username" id="fs_txt_username" placeholder="Họ và tên*" value=""
+                    (click)="focusInput('fs_txt_username')">
+            </div>
+
+            <div class="fs-group">
+                <div class="fs-error-txt">
+                    <p>Vui lòng kiểm tra lại dữ liệu</p>
+                </div>
+                <input type="text" name="fs_txt_email" id="fs_txt_email" placeholder="Địa chỉ email*" value="">
+            </div>
+
+            <div class="fs-group fs-show-error">
+                <div class="fs-error-txt">
+                    <p>Vui lòng kiểm tra lại dữ liệu</p>
+                </div>
+                <input type="text" name="fs_txt_phone" id="fs_txt_phone" placeholder="Số điện thoại*" value="">
+            </div>
+
+            <div class="fs-group" [ngClass]="isShowError?'fs-show-error':''">
+                <div class="fs-error-txt">
+                    <p>Vui lòng kiểm tra lại dữ liệu</p>
+                </div>
+                <div class="fs-select" id="fs_date" [ngClass]="isShowSelectDay?'fs-open-select':''">
+                    <div class="fs-select-header" id="selectDay" (click)="showSelectBox('selectDay')">
+                        <span>{{selectedDay.Value}}</span>
+                    </div>
+                    <div class="fs-select-box">
+                        <ul>
+                            <li *ngFor="let item of dayArr;" [ngClass]="item.Key==selectedDay.Key?'selected':''"
+                                (click)="selectDay(item.Key,'selectDay')">
+                                {{item.Value}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fs-group">
+                <div class="fs-select" id="fs_month" [ngClass]="isShowSelectMonth?'fs-open-select':''">
+                    <div class="fs-select-header" id="selectMonth" (click)="showSelectBox('selectMonth')">
+                        <span>{{selectedMonth.Value}}</span>
+                    </div>
+                    <div class="fs-select-box">
+                        <ul>
+                            <li *ngFor="let item of monthArr;" [ngClass]="item.Key==selectedMonth.Key?'selected':''"
+                                (click)="selectMonth(item.Key,'selectMonth')">
+                                {{item.Value}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fs-group">
+                <div class="fs-select" id="fs_year" [ngClass]="isShowSelectYear?'fs-open-select':''">
+                    <div class="fs-select-header" id="selectYear" (click)="showSelectBox('selectYear')">
+                        <span>{{selectedYear.Value}}</span>
+                    </div>
+                    <div class="fs-select-box">
+                        <ul>
+                            <li *ngFor="let item of yearArr;" [ngClass]="item.Key==selectedYear.Key?'selected':''"
+                                (click)="selectYear(item.Key,'selectYear')">
+                                {{item.Value}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fs-group fs-show-error">
+                <div class="fs-error-txt">
+                    <p>Vui lòng kiểm tra lại dữ liệu</p>
+                </div>
+                <textarea name="fs_area_comment" id="fs_area_comment" placeholder="Nội dung"></textarea>
+            </div>
+
+            <div class="fs-group">
+                <div class="fs-checkbox">
+                    <input type="checkbox" name="chk_condition" id="chk_condition" checked>
+                    <label for="chk_condition">Tôi đồng ý với các <a class="fs-btn-open-overlay"
+                            href="javascript:void(0);">Điều khoản & Điều kiện</a></label>
+                </div>
+            </div>
+
+            <div class="fs-group">
+                <div class="fs-box-but">
+                    <button type="button" name="fs_btn_register" id="fs_btn_register"
+                        class="fs-btn"><span>Gửi</span></button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+
+</div>
+<!--/Form-->

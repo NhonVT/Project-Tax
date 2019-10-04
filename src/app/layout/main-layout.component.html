@@ -1,66 +1,38 @@
-<div class="cnt-wrap">
+<div class="fs-page">
 
     <!--Header-->
-    <div class="header">
-        <div class="header-inr">
-            <div class="nav-but" (click)="OpenMemu();">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="logo">
-                <a href="javascript:void(0);"><img draggable="false" src="assets/images/hdr-logo-ompalo.png" alt="ompalo"></a>
-            </div>
-            <div class="navigation" [ngClass]="isMenu?'active':''"> 
-                <div class="nav">
-                    <ul>
-                        <li><a class="menu-active" [ngClass]="activeMenuId==1?'active':''" [routerLink]="['/']">Home</a></li>
-                        <li class="has-sub">
-                            <a class="has-icon" [ngClass]="isIconRotate == 1?'active':''" href="javascript:void(0);" (click)="ShowSubMenu(1);">Menu</a>
-                        <ul class="sub-menu" [ngClass]="isSubmenu== 1?'active':''">
-                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
-                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
-                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
-                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
-                            <li><a href="javascript:void(0);"><span>Lorem</span></a></li>
-                        </ul>
-                        </li>
-                        <li>
-                            <a class="menu-active" [ngClass]="activeMenuId==3?'active':''" [routerLink]="['/getting']">Getting Around</a>
-                        </li>
-                        <li><a href="javascript:void(0);">About Us</a></li>
-                        <li class="has-sub">
-                            <a class="has-icon" [ngClass]="isIconRotate == 2?'active':''" href="javascript:void(0);" (click)="ShowSubMenu(2);">Contact Us</a>
-                            <ul class="sub-menu" [ngClass]="isSubmenu==2?'active':''">
-                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
-                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
-                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
-                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
-                                <li><a href="javascript:void(0);"><span>Lorem 2</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+    <header class="fs-header">
+        <div class="fs-header-bg"></div>
+        <div class="fs-logo">
+            <a href="javascript:void(0)"><img class="cmPic" src="../../assets/images/hdr-logo-ompalo.png" alt="Techable"></a>
         </div>
-    </div>
+        <div class="fs-navigation">
+            <div class="fs-nav">
+                <ul>
+                    <li><a href="javascript:void(0);">Trang chủ</a></li>
+                    <li><a href="javascript:void(0);">Chuyên mục</a></li>
+                    <li><a href="javascript:void(0);">Cài đặt</a></li>
+                    <li><a href="javascript:void(0);">Tìm hiểu thêm</a></li>
+                    <li><a href="javascript:void(0);">Trợ giúp</a></li>
+                    <li><a href="javascript:void(0);">Phản hồi</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fs-nav-but">
+            <span class="fs-nav-line"></span>
+            <span class="fs-nav-line"></span>
+            <span class="fs-nav-line"></span>
+            <div class="fs-btn-event">Toogle menu</div>
+        </div>
+    </header>
     <!--/Header-->
 
     <!--Content-->
-    <div class="cnt-inr">
+    <div class="fs-container">
 
-        <!--Side-->
-        <div class="main">
-            <router-outlet></router-outlet>
-        </div>
-        <!--/Main-->
+        <router-outlet></router-outlet>
 
     </div>
     <!--/Content-->
-    <!--popup-->
-
-
-    <div class="goTop" (click)="goTop()"></div>
 
 </div>

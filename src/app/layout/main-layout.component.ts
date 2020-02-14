@@ -12,8 +12,6 @@ import { CommonService } from '../services/common-service';
 
 
 export class MainLayoutComponent implements OnInit {
-    docEl: any;
-    pageWrap: any;
     scrollTop: any;
     isOverlay = false;
     isShow = false;
@@ -21,7 +19,7 @@ export class MainLayoutComponent implements OnInit {
     isClock = false;
     activeMenuId = 0;
     subscription: Subscription;
-    // tslint:disable-next-line: deprecation
+
     constructor(
         private elementRef: ElementRef,
         @Inject(DOCUMENT) private document: Document,
@@ -37,54 +35,19 @@ export class MainLayoutComponent implements OnInit {
         });
     }
 
+    ngOnInit() {
+
+    }
+
     showMenu() {
         if (this.isShow === false) {
             this.isShow = !this.isShow;
             this.isChangeClose = !this.isChangeClose;
             this.document.body.classList.add('fs-no-scroll');
-            // this.lockBody();
         } else {
-            // this.unlockBody();
             this.isShow = false;
             this.isChangeClose = false;
             this.document.body.classList.remove('fs-no-scroll');
         }
     }
-
-    //  setStyle() {
-    //      const styles = {
-    //          top: -(this.scrollTop),
-    //      };
-    //      return styles;
-    //  }
-    //  setStyle2() {
-    //      const styles = {
-    //          top: 'auto',
-    //      };
-    //      return styles;
-    //  }
- 
-    //  // Lock touch body
-    //  lockBody() {
-    //      if (window.pageYOffset) {
-    //          this.scrollTop = window.pageYOffset;
-    //          this.setStyle();
-    //      }
-    //      this.document.body.classList.add('fs-no-scroll');
-    //  }
- 
-    //  // Unlock touch body
-    //  unlockBody() {
-    //      window.scrollTo(0, this.scrollTop);
-    //      this.setStyle2();
-    //      window.setTimeout(function() {
-    //          this.scrollTop = null;
-    //      }, 0);
-    //      this.document.body.classList.remove('fs-no-scroll');
-    //  }
-
-    ngOnInit() {
-
-    }
-
 }

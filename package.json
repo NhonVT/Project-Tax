@@ -21,6 +21,7 @@
     "@angular/router": "~7.2.0",
     "angular2-useful-swiper": "^8.0.1-beta.1",
     "core-js": "^2.5.4",
+    "ngx-image-zoom": "^0.4.1",
     "ngx-swiper-wrapper": "^8.0.2",
     "ngx-useful-swiper": "^8.0.1",
     "rxjs": "~6.3.3",

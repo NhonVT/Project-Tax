@@ -16,18 +16,10 @@ export class CommonService {
     static hostUrl = 'https://ompalo.com';
     static baseUrl = CommonService.baseUrlWithoutApi + '/api/';
     static loginUrl = CommonService.baseUrlWithoutApi + '/token';
-    static noActionLike = 0;
-    static like = 1;
-    static dislike = 2;
     public static BussinessGenericErrorMessageKey = 'Following business rules have failed:';
-    static ChangeProfileSubcribeKey = 'ChangeProfileSubcribe';
-    static ChangeMyListSubcribeKey = 'ChangeMyListSubcribeKey';
-    static ShowPopupAddMyListKey = 'ShowPopupAddMyListKey';
-    static ShowPopupAddMyListVideoKey = 'ShowPopupAddMyListVideoKey';
-    static ShowPopupShareKey = 'ShowPopupShareKey';
-    static ChangeMyListDetailSubcribeKey = 'ChangeMyListDetailSubcribeKey';
 
-
+    // show popup
+    static ShowPopup = 'ShowPopup';
 
     //Show menu Active Key
     static ShowDashboardMenuKey = 'ShowDashboardMenu';

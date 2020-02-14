@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, HostListener } from '@angular/core';
 import { KeyValueViewModel } from '../../models/common-model';
 
 @Component({
@@ -100,6 +100,19 @@ export class FormComponent implements OnInit {
       case 'fs_txt_username':
         this.isShowError = false;
         break;
+    }
+  }
+
+  @HostListener('click', ['$event.target'])
+  clickout(element) {
+    if (!element.classList.contains('fs-select-header')) {
+      if (this.isShowSelectDay === true) {
+        this.isShowSelectDay = false;
+      } else if (this.isShowSelectMonth === true) {
+        this.isShowSelectMonth = false;
+      } else if (this.isShowSelectYear === true) {
+        this.isShowSelectYear = false;
+      }
     }
   }
 

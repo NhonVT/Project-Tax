@@ -810,6 +810,19 @@ html, body{
 	color:#fff;
 }
 
+/* Zoom Image */
+.is-zoom, .is-zoom .fs-section-inr{
+	position: relative;
+	display: block;
+}
+.is-zoom .fs-area-pic{
+	width: 90%;
+	margin: 0 auto;
+}
+.ngxImageZoomContainer {
+	width: 60% !important;
+	cursor: zoom-in;
+}
 
 /*AREA SLIDER*/
 

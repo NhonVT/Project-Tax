@@ -11,9 +11,10 @@ export class ImagezommComponent implements OnInit {
   myThumbnai = '../../../assets/images/banner1.jpg';
   myFullresImage = '../../../assets/images/banner1.jpg';
   mode = 'hover';
-  scrollAbale = 'true';
+  scrollAbale = true;
   zoomRatio = 4;
   magnification = 1;
+  enableLens = false;
   constructor() {
   }
 
